@@ -10,7 +10,7 @@ router.get('/', async (req,res) => {
     try{
         const recipeData = await Recipe.findAll();
         const recipeTotal = [];
-        for (recipe in recipeData){
+        for (recipe of recipeData){
             recipeTotal.push(recipe.dataValues);
         }
         console.log(recipeTotal);
