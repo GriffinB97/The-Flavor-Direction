@@ -18,6 +18,10 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         rating: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -34,7 +38,7 @@ Recipe.init(
             //if it isn't inputed, defaults to undefined with is falsey 
             type: DataTypes.BOOLEAN
         },
-        gluttenFree: {
+        glutenFree: {
             type: DataTypes.BOOLEAN
         },
         vegan: {
