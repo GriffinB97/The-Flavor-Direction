@@ -39,6 +39,18 @@ router.get('/:id', async (req,res) => {
 });
 
 
+//get by food type
+router.get('/meal/:foodType', async (req, res) => {
+    try {
+
+    }
+    catch (err){
+        res.status(500).json(err);
+    }
+});
+
+
+
 router.post('/', async (req,res) => {
     try{
         //sequelize function create
@@ -52,7 +64,11 @@ router.post('/', async (req,res) => {
         console.log(err);
         res.status(500).json(err)
     }
-})
+});
+
+
+
+
 
 
 
