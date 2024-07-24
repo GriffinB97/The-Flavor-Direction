@@ -5,6 +5,7 @@ class Recipe extends Model {
     //nothing special here
 }
 
+
 Recipe.init(
     //Name / Description / Rating / Instructions OR url / has nuts (or other restrictions)  / Type of food (breakfast, lunch, etc) /
     {
@@ -47,8 +48,22 @@ Recipe.init(
         url: {
             //if a url is not given, the link will be created by the id
             type: DataTypes.STRING
+        },
+        poster_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
-    }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'recipe'
+      }
 );
 
 module.exports = Recipe;
