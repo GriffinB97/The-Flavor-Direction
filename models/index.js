@@ -8,6 +8,11 @@ const RecipeIngredient = require('./recipeIngredient');
 User.hasMany(Recipe, {
     foreignKey: 'poster_id',
     onDelete: 'CASCADE'
-})
+});
+
+Recipe.belongsTo(User, {
+    foreignkey: 'user_id',
+});
+
 
 module.exports = { Recipe , User, RecipeIngredient, Ingredient};
