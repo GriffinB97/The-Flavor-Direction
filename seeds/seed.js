@@ -168,18 +168,3 @@ const recipes = [
         foodType: "lunch"
     },
 ];
-
-const RecipeIngredient = [
-    { quantity: '', recipe_id: 1, ingredient_id: 1 },
-    { quantity: '', recipe_id: 2, ingredient_id: 2 },
-    { quantity: '', recipe_id: 3, ingredient_id: 3 },
-    { quantity: '', recipe_id: 4, ingredient_id: 4 },
-    { quantity: '', recipe_id: 5, ingredient_id: 5 },
-    { quantity: '', recipe_id: 6, ingredient_id: 6 },
-    { quantity: '', recipe_id: 7, ingredient_id: 7 },
-    { quantity: '', recipe_id: 8, ingredient_id: 8 },
-    { quantity: '', recipe_id: 9, ingredient_id: 9 },
-    { quantity: '', recipe_id: 10, ingredient_id: 10 },
-    { quantity: '', recipe_id: 11, ingredient_id:  11},
-    { quantity: '', recipe_id: 12, ingredient_id: 12 }
-];
