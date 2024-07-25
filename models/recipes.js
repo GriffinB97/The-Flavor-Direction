@@ -15,7 +15,7 @@ Recipe.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name : {
+        title : {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -25,7 +25,6 @@ Recipe.init(
         },
         rating: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             validate: {
                 mine: 1,
                 max: 5
@@ -49,12 +48,19 @@ Recipe.init(
             //if a url is not given, the link will be created by the id
             type: DataTypes.STRING
         },
-        poster_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
+        },
+        instructions : {
+            type: DataTypes.ARRAY
+            //can be null because it may be a url
+        },
+        ingredients : {
+            type: DataTypes.ARRAY
         }
     },
     {
