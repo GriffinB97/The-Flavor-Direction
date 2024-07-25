@@ -3,6 +3,8 @@ const { Ingredient } = require('../../models');
 //api/ingredients
 
 //get all, get by id, post
+
+//get all
 router.get('/', async (req, res) => {
     try{
         const ingredientData = await Ingredient.findAll();
