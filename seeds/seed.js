@@ -3,7 +3,7 @@ const { User, Recipe, Ingredient, RecipeIngredient } = require('../models');
 
 const users = [
     {
-        username: 'Chef Boyardee',
+        name: 'Chef Boyardee',
         email: 'cookingup@chefs.com',
         password: 'thecookingchef',
     },
@@ -21,16 +21,16 @@ const recipes = [
             'Fluff rice with a fork and divide between bowls. Top with veggies, pork, and salsa. Garnish with remaining cilantro. Serve with any remaining lime wedges on the side.'
         ],
         ingredients: [
-            { ingredient: 'Ground Pork', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Tomato', quantity: '1 unit' },
-            { ingredient: 'Lime', quantity: '1 unit' },
-            { ingredient: 'Green Pepper', quantity: '1 unit' },
-            { ingredient: 'Yellow Onion', quantity: '1 unit' },
-            { ingredient: 'Scallions', quantity: '2 TBSP' },
-            { ingredient: 'Smokey Red Pepper Crema', quantity: '1/4 oz' },
-            { ingredient: 'Cilantro', quantity: '1/4 oz' },
-            { ingredient: 'Fajita Spice Blend', quantity: '1/2 tsp' }
+             'Ground Pork 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Tomato 1 unit' ,
+             'Lime 1 unit' ,
+             'Green Pepper 1 unit' ,
+             'Yellow Onion 1 unit' ,
+             'Scallions 2 TBSP' ,
+             'Smokey Red Pepper Crema 1/4 oz' ,
+             'Cilantro 1/4 oz' ,
+             'Fajita Spice Blend 1/2 tsp' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -45,14 +45,14 @@ const recipes = [
             'Divide pork, garlic bread, and green beans between plates. Top pork with balsamic rosemary pan sauce. Serve with remaining garlic herb butter.'
         ],
         ingredients: [
-            { ingredient: 'Pork Chops', quantity: '10 oz' },
-            { ingredient: 'Green Beans', quantity: '6 oz' },
-            { ingredient: 'Garlic Herb Butter', quantity: '1 unit' },
-            { ingredient: 'Balsamic Vinegar', quantity: '5 tsp' },
-            { ingredient: 'Garlic', quantity: '1 unit' },
-            { ingredient: 'Rosemary', quantity: '1/4 oz' },
-            { ingredient: 'Carrots', quantity: '2 TBSP' },
-            { ingredient: 'Butter', quantity: '2 TBSP' }
+             'Pork Chops 10 oz' ,
+             'Green Beans 6 oz' ,
+             'Garlic Herb Butter 1 unit' ,
+             'Balsamic Vinegar 5 tsp' ,
+             'Garlic 1 unit' ,
+             'Rosemary 1/4 oz' ,
+             'Carrots 2 TBSP' ,
+             'Butter 2 TBSP' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -69,14 +69,14 @@ const recipes = [
             'Finish & Serve: Slice chicken crosswise. Divide chicken, potatoes, and broccoli between plates. Garnish with any remaining chopped dill if desired and serve.'
         ],
         ingredients: [
-            { ingredient: 'Chicken Cutlets', quantity: '12 oz' },
-            { ingredient: 'Broccoli', quantity: '8 oz' },
-            { ingredient: 'Potatoes', quantity: '10 oz' },
-            { ingredient: 'Garlic', quantity: '1 unit' },
-            { ingredient: 'Dill', quantity: '2 TBSP' },
-            { ingredient: 'Dijon Mustard', quantity: '1/4 oz' },
-            { ingredient: 'Sour Cream', quantity: '1.5 TBSP' },
-            { ingredient: 'Butter', quantity: '1.5 TBSP' }
+             'Chicken Cutlets 12 oz' ,
+             'Broccoli 8 oz' ,
+             'Potatoes 10 oz' ,
+             'Garlic 1 unit' ,
+             'Dill 2 TBSP' ,
+             'Dijon Mustard 1/4 oz' ,
+             'Sour Cream 1.5 TBSP' ,
+             'Butter 1.5 TBSP' 
         ],
         user_id: 1,
         foodType: 'lunch'
@@ -93,16 +93,16 @@ const recipes = [
             'Fluff rice with a fork. Stir in tomato and half the scallion greens, reserving remaining for garnish. Thinly slice chicken. Divide rice between bowls and top with chicken. Squeeze juice from remaining lime over top. Drizzle with creamy salsa verde and garnish with remaining pickled jalapeño rounds and reserved scallion greens.'
         ],
         ingredients: [
-            { ingredient: 'Chicken Cutlets', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Tomato', quantity: '1 unit' },
-            { ingredient: 'Lime', quantity: '1 unit' },
-            { ingredient: 'Green Pepper', quantity: '1 unit' },
-            { ingredient: 'Yellow Onion', quantity: '1 unit' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Cilantro', quantity: '1 unit' },
-            { ingredient: 'Mayonnaise', quantity: '1/2 oz' },
-            { ingredient: 'Fajita Spice Blend', quantity: '1.5 TBSP' }
+             'Chicken Cutlets 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Tomato 1 unit' ,
+             'Lime 1 unit' ,
+             'Green Pepper 1 unit' ,
+             'Yellow Onion 1 unit' ,
+             'Scallions 1 unit' ,
+             'Cilantro 1 unit' ,
+             'Mayonnaise 1/2 oz' ,
+             'Fajita Spice Blend 1.5 TBSP' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -118,16 +118,16 @@ const recipes = [
             'Divide carrots, mashed potatoes, and chicken between plates. Top chicken with remaining scallion greens and hot sauce. Serve with remaining blue cheese sauce on the side.'
         ],
         ingredients: [
-            { ingredient: 'Chicken Breast Strips', quantity: '12 oz' },
-            { ingredient: 'Potatoes', quantity: '10 oz' },
-            { ingredient: 'Carrots', quantity: '6 oz' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Garlic', quantity: '1 clove' },
-            { ingredient: 'Sour Cream', quantity: '1/2 cup' },
-            { ingredient: 'Blue Cheese Dressing', quantity: '1 oz' },
-            { ingredient: 'Franks Seasoning Blend', quantity: '2 tsp' },
-            { ingredient: 'Hot Sauce', quantity: '1 TBSP' },
-            { ingredient: 'Butter', quantity: '2 TBSP' }
+             'Chicken Breast Strips 12 oz' ,
+             'Potatoes 10 oz' ,
+             'Carrots 6 oz' ,
+             'Scallions 1 unit' ,
+             'Garlic 1 clove' ,
+             'Sour Cream 1/2 cup' ,
+             'Blue Cheese Dressing 1 oz' ,
+             'Franks Seasoning Blend 2 tsp' ,
+             'Hot Sauce 1 TBSP' ,
+             'Butter 2 TBSP' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -142,16 +142,16 @@ const recipes = [
             'Fill tortillas with pork filling. Top with Monterey Jack cheese, slaw, sour cream, and remaining cilantro.'
         ],
         ingredients: [
-            { ingredient: 'Ground Pork', quantity: '10 oz' },
-            { ingredient: 'Yellow Onion', quantity: '1 unit' },
-            { ingredient: 'Cilantro', quantity: '1 unit' },
-            { ingredient: 'Fajita Spice Blend', quantity: '1.5 TBSP' },
-            { ingredient: 'Monterey Jack Cheese', quantity: '1.5 oz' },
-            { ingredient: 'Flour Tortillas', quantity: '4 units' },
-            { ingredient: 'Shredded Red Cabbage', quantity: '6 oz' },
-            { ingredient: 'Mayonnaise', quantity: '2 TBSP' },
-            { ingredient: 'Lime', quantity: '1 unit' },
-            { ingredient: 'Sugar', quantity: '1 tsp' }
+             'Ground Pork 10 oz' ,
+             'Yellow Onion 1 unit' ,
+             'Cilantro 1 unit' ,
+             'Fajita Spice Blend 1.5 TBSP' ,
+             'Monterey Jack Cheese 1.5 oz' ,
+             'Flour Tortillas 4 units' ,
+             'Shredded Red Cabbage 6 oz' ,
+             'Mayonnaise 2 TBSP' ,
+             'Lime 1 unit' ,
+             'Sugar 1 tsp' 
         ],
         user_id: 1,
         foodType: 'lunch'
@@ -168,16 +168,16 @@ const recipes = [
             'Halve buns and toast until golden. Spread cut sides of buns with garlic mayo. Fill with patties and as much onion jam as you like. Serve with potato wedges on the side.'
         ],
         ingredients: [
-            { ingredient: 'Ground Beef', quantity: '12 oz' },
-            { ingredient: 'Potatoes', quantity: '10 oz' },
-            { ingredient: 'Yellow Onion', quantity: '1 unit' },
-            { ingredient: 'Garlic', quantity: '1 clove' },
-            { ingredient: 'Monterey Jack Cheese', quantity: '2 oz' },
-            { ingredient: 'Potato Buns', quantity: '2 units' },
-            { ingredient: 'Mayonnaise', quantity: '2 TBSP' },
-            { ingredient: 'Vinegar', quantity: '2 TBSP' },
-            { ingredient: 'Sugar', quantity: '1 tsp' },
-            { ingredient: 'Salt', quantity: '1/4 tsp' }
+             'Ground Beef 12 oz' ,
+             'Potatoes 10 oz' ,
+             'Yellow Onion 1 unit' ,
+             'Garlic 1 clove' ,
+             'Monterey Jack Cheese 2 oz' ,
+             'Potato Buns 2 units' ,
+             'Mayonnaise 2 TBSP' ,
+             'Vinegar 2 TBSP' ,
+             'Sugar 1 tsp' ,
+             'Salt 1/4 tsp' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -194,16 +194,16 @@ const recipes = [
             'Add zucchini, mushrooms, drained penne, and juice from half the lemon. Stir to combine. Season with salt and pepper. Divide pasta between bowls. Serve with remaining Parmesan and lemon wedges on the side.'
         ],
         ingredients: [
-            { ingredient: 'Penne Pasta', quantity: '8 oz' },
-            { ingredient: 'Zucchini', quantity: '1 unit' },
-            { ingredient: 'Lemon', quantity: '1 unit' },
-            { ingredient: 'Mushrooms', quantity: '1 unit' },
-            { ingredient: 'Grape Tomatoes', quantity: '1 unit' },
-            { ingredient: 'Italian Seasoning', quantity: '1 TBSP' },
-            { ingredient: 'Chicken Stock', quantity: '1/4 cup' },
-            { ingredient: 'Creme Fraiche', quantity: '4 TBSP' },
-            { ingredient: 'Parmesan Cheese', quantity: '2 TBSP' },
-            { ingredient: 'Butter', quantity: '1 TBSP' }
+             'Penne Pasta 8 oz' ,
+             'Zucchini 1 unit' ,
+             'Lemon 1 unit' ,
+             'Mushrooms 1 unit' ,
+             'Grape Tomatoes 1 unit' ,
+             'Italian Seasoning 1 TBSP' ,
+             'Chicken Stock 1/4 cup' ,
+             'Creme Fraiche 4 TBSP' ,
+             'Parmesan Cheese 2 TBSP' ,
+             'Butter 1 TBSP' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -219,15 +219,15 @@ const recipes = [
             'Pour in hoisin sauce and cook, stirring, until chicken is coated and cooked through, 2-3 minutes. Fluff rice with a fork and season with salt and pepper. Divide rice, green beans, and chicken between plates. Garnish with scallion greens and sesame seeds. Serve.'
         ],
         ingredients: [
-            { ingredient: 'Chicken Breast Strips', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Green Beans', quantity: '6 oz' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Ginger', quantity: '1 unit' },
-            { ingredient: 'Hoisin Sauce', quantity: '2 TBSP' },
-            { ingredient: 'Honey', quantity: '1 TBSP' },
-            { ingredient: 'Sriracha', quantity: '1 TBSP' },
-            { ingredient: 'Sesame Seeds', quantity: '1 TBSP' }
+             'Chicken Breast Strips 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Green Beans 6 oz' ,
+             'Scallions 1 unit' ,
+             'Ginger 1 unit' ,
+             'Hoisin Sauce 2 TBSP' ,
+             'Honey 1 TBSP' ,
+             'Sriracha 1 TBSP' ,
+             'Sesame Seeds 1 TBSP' 
         ],
         user_id: 1,
         foodType: 'lunch'
@@ -244,16 +244,16 @@ const recipes = [
             'Fluff rice with a fork and season with salt and pepper. Divide rice, pork, and veggies between plates. Top with pickled scallion whites and tomato. Sprinkle with scallion greens and serve.'
         ],
         ingredients: [
-            { ingredient: 'Ground Pork', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Zucchini', quantity: '1 unit' },
-            { ingredient: 'Carrots', quantity: '2 units' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Garlic', quantity: '2 units' },
-            { ingredient: 'Soy Sauce', quantity: '2 TBSP' },
-            { ingredient: 'Vinegar', quantity: '2 TBSP' },
-            { ingredient: 'Sugar', quantity: '1 TBSP' },
-            { ingredient: 'Tomato', quantity: '1 unit' }
+             'Ground Pork 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Zucchini 1 unit' ,
+             'Carrots 2 units' ,
+             'Scallions 1 unit' ,
+             'Garlic 2 units' ,
+             'Soy Sauce 2 TBSP' ,
+             'Vinegar 2 TBSP' ,
+             'Sugar 1 TBSP' ,
+             'Tomato 1 unit' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -268,16 +268,16 @@ const recipes = [
             'Fluff rice with a fork and stir in 1 TBSP butter (2 TBSP for 4 servings) until melted. Season with salt and pepper. Divide rice between bowls and top with moo shu pork. Sprinkle with scallion greens and as many sesame seeds as you like. Serve with any remaining lime wedges on the side.'
         ],
         ingredients: [
-            { ingredient: 'Ground Pork', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Shredded Red Cabbage', quantity: '6 oz' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Hoisin Sauce', quantity: '2 TBSP' },
-            { ingredient: 'Chili Sauce', quantity: '1 TBSP' },
-            { ingredient: 'Sweet Soy Glaze', quantity: '2 1/2 TBSP' },
-            { ingredient: 'Sugar', quantity: '1/2 tsp' },
-            { ingredient: 'Lime', quantity: '1 unit' },
-            { ingredient: 'Sesame Seeds', quantity: '1 TBSP' }
+             'Ground Pork 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Shredded Red Cabbage 6 oz' ,
+             'Scallions 1 unit' ,
+             'Hoisin Sauce 2 TBSP' ,
+             'Chili Sauce 1 TBSP' ,
+             'Sweet Soy Glaze 2 1/2 TBSP' ,
+             'Sugar 1/2 tsp' ,
+             'Lime 1 unit' ,
+             'Sesame Seeds 1 TBSP' 
         ],
         user_id: 1,
         foodType: 'dinner'
@@ -294,16 +294,16 @@ const recipes = [
             'Fluff rice with a fork and stir in 1 TBSP butter (2 TBSP for 4 servings), lime zest, and half the cilantro. Season with salt and pepper. Divide rice between bowls and top with pork and veggies. Sprinkle with candied peanuts, scallion greens, and remaining cilantro. Serve with lime wedges on the side.'
         ],
         ingredients: [
-            { ingredient: 'Ground Pork', quantity: '10 oz' },
-            { ingredient: 'Jasmine Rice', quantity: '1 cup' },
-            { ingredient: 'Bell Pepper', quantity: '1 unit' },
-            { ingredient: 'Scallions', quantity: '1 unit' },
-            { ingredient: 'Garlic', quantity: '1 clove' },
-            { ingredient: 'Soy Glaze', quantity: '2 TBSP' },
-            { ingredient: 'Sweet Thai Chili Sauce', quantity: '1 TBSP' },
-            { ingredient: 'Lime', quantity: '1 unit' },
-            { ingredient: 'Peanuts', quantity: '1 oz' },
-            { ingredient: 'Sugar', quantity: '1 tsp' }
+             'Ground Pork 10 oz' ,
+             'Jasmine Rice 1 cup' ,
+             'Bell Pepper 1 unit' ,
+             'Scallions 1 unit' ,
+             'Garlic 1 clove' ,
+             'Soy Glaze 2 TBSP' ,
+             'Sweet Thai Chili Sauce 1 TBSP' ,
+             'Lime 1 unit' ,
+             'Peanuts 1 oz' ,
+             'Sugar 1 tsp' 
         ],
         user_id: 1,
         foodType: 'lunch'
@@ -318,29 +318,29 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const ingredientInstances = await Ingredient.bulkCreate(
-        recipes.flatMap(recipe => recipe.ingredients.map(ingredient => ({ ingredient_name: ingredient.ingredient }))),
-        { returning: true }
-    );
+    // const ingredientInstances = await Ingredient.bulkCreate(
+    //     recipes.flatMap(recipe => recipe.ingredients.map(ingredient => ({ ingredient_name: ingredient.ingredient }))),
+    //     { returning: true }
+    // );
 
-    const ingredientMap = ingredientInstances.reduce((map, ingredient) => {
-        map[ingredient.ingredient_name] = ingredient.id;
-        return map;
-    }, {});
+    // const ingredientMap = ingredientInstances.reduce((map, ingredient) => {
+    //     map[ingredient.ingredient_name] = ingredient.id;
+    //     return map;
+    // }, {});
 
     const recipeInstances = await Recipe.bulkCreate(recipes, {
         returning: true,
     });
 
-    const recipeIngredientInstances = recipes.flatMap((recipe, index) =>
-        recipe.ingredients.map(ingredient => ({
-            recipe_id: recipeInstances[index].id,
-            ingredient_id: ingredientMap[ingredient.ingredient],
-            quantity: ingredient.quantity,
-        }))
-    );
+    // const recipeIngredientInstances = recipes.flatMap((recipe, index) =>
+    //     recipe.ingredients.map(ingredient => ({
+    //         recipe_id: recipeInstances[index].id,
+    //         ingredient_id: ingredientMap[ingredient.ingredient],
+    //         quantity: ingredient.quantity,
+    //     }))
+    // );
 
-    await RecipeIngredient.bulkCreate(recipeIngredientInstances);
+    // await RecipeIngredient.bulkCreate(recipeIngredientInstances);
 
     process.exit(0);
 };
