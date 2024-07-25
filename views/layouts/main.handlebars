@@ -12,10 +12,10 @@
         <h2> One Stop Shop for Everything Delicious!</h2>
     </header>
     {{#if logged_in}}
-    <!-- Need the / tag for the pages to redirect too -->
     <nav>   
         <a href="/">Home</a>      
-        <a href="/recipe">Create Recipe</a>      
+        <a href="/recipe">Recipes</a>      
+        <a href="/users">Users</a>
         <button class="btn" id="logout">Logout</button>
         </nav>
     {{else}}

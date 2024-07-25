@@ -1,0 +1,10 @@
+<h1>Recipes!</h1>
+  {{#each recipe}}
+  <div class="maindisplay" id="recipe">
+    <h5>{{recipe.title}}</h5>
+    <p>{{recipe.description}}</p>
+    {{#each recipe.instructions as |instructions|}}
+    <p>{{instructions}}</p>
+    {{/each}}
+</div>
+  {{/each}}
