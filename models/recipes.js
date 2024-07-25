@@ -56,11 +56,11 @@ Recipe.init(
             }
         },
         instructions : {
-            type: DataTypes.ARRAY
+            type: DataTypes.ARRAY(DataTypes.STRING)
             //can be null because it may be a url
         },
         ingredients : {
-            type: DataTypes.ARRAY
+            type: DataTypes.ARRAY(DataTypes.STRING)
         }
     },
     {

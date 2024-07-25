@@ -8,6 +8,7 @@ class User extends Model {
         return bcrypt.compareSync(loginPw, this.password);
       }
 }
+console.log(sequelize);
 
 User.init(
     //Name / password
@@ -44,15 +45,15 @@ User.init(
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
-        }
-    },  
-    {
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'user'
-      }
+    },  
+    // {
+    //   }
 );
 
 module.exports = User;

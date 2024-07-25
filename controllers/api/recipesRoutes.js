@@ -65,11 +65,15 @@ router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
 router.get('/:id/ingredient', async (req, res) => {
     try {
         //this needs to check the recipe for ingridients and store them in a list
-        //I don't know how the connection is set up yet
-
+        //ingredients is a catagory under recipe
+        //go through the ingredients and put it into a list for handle vars
+        const meal = await Recipe.findByPk(req.params.id);
+        const ingredientList = meal.ingredients;
+        console.log(ingredientList);
+        res.json(ingredientList);
     }
     catch (err) {
-        res.status(500).json(err);
+        res.status(404).json("No recipe was found.");
     };
 });
 
