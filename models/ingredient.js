@@ -11,6 +11,10 @@ Ingedient.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        ingredient_name : {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize, 

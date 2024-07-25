@@ -40,7 +40,7 @@ router.get('/:id', async (req,res) => {
 
 
 //get by food type
-router.get('/meal/:foodType', async (req, res) => {
+router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
     try {
         const allMeals = await Recipe.findAll({ //this should be how searching for a specific thing works
             where: {
@@ -53,10 +53,23 @@ router.get('/meal/:foodType', async (req, res) => {
         }
         console.log(allType);
         res.json(allType);
+        //handelbars call
     }
     catch (err){
         res.status(500).json(err);
     }
+});
+
+//get ingredient list
+router.get('/:id/ingredient', async (req, res) => {
+    try {
+        //this needs to check the recipe for ingridients and store them in a list
+        //I don't know how the connection is set up yet
+
+    }
+    catch (err) {
+        res.status(500).json(err);
+    };
 });
 
 
@@ -77,8 +90,17 @@ router.post('/', async (req,res) => {
 });
 
 
+//all recipe page
+//all user page
+//all ingredient
 
+//specific recipe id page  //multiple specific recipe (get all dinner)
+    //all of these pages could be the same handel bars
 
+//specific user id page
+
+//recipe name, ingredients
+//user name , user.ingredients
 
 
 
