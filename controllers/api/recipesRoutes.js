@@ -39,6 +39,28 @@ router.get('/:id', async (req,res) => {
 });
 
 
+//get by food type
+router.get('/meal/:foodType', async (req, res) => {
+    try {
+        const allMeals = await Recipe.findAll({ //this should be how searching for a specific thing works
+            where: {
+                foodType : req.params.foodType
+            }
+        });
+        const allType = [];
+        for (meal of allMeals){
+            allType.push(meal.dataValues);
+        }
+        console.log(allType);
+        res.json(allType);
+    }
+    catch (err){
+        res.status(500).json(err);
+    }
+});
+
+
+
 router.post('/', async (req,res) => {
     try{
         //sequelize function create
@@ -52,7 +74,11 @@ router.post('/', async (req,res) => {
         console.log(err);
         res.status(500).json(err)
     }
-})
+});
+
+
+
+
 
 
 

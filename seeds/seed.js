@@ -133,6 +133,38 @@ const recipes = [
         foodType: "dinner"
     },
     {
-        
-    }
+        title: 'Silky sicilian Penne',
+        description: 'Penne pasta tossed with an italian seasoning, mushrooms, zucchini and tomatoes.',
+        instructions: 'Bring a large pot of salted water to a boil. Wash and dry all produce. Trim and halve zucchini lengthwise; cut crosswise into 1/2-inch-thick half-moons. Quarter lemon. Trim and thinly slice mushrooms. Heat a drizzle of oil in a large pan over medium-high heat. Add zucchini and cook, stirring occasionally, until browned and tender, 3-5 minutes. Season with salt and pepper. Remove from pan and set aside. Heat a drizzle of oil in the same pan over medium-high heat. Add mushrooms and cook, stirring occasionally, until browned and tender, 5-7 minutes. Season with salt and pepper. Remove from pan and set aside with zucchini. Once water is boiling, add penne to pot. Cook, stirring occasionally, until al dente, 9-11 minutes. Reserve 1 cup pasta cooking water, then drain. Melt 1 TBSP butter in same pan over medium-high heat. Add tomatoes and cook, stirring, until softened, 1-2 minutes. Stir in Italian seasoning, 1/4 tsp salt, and a pinch of pepper. Cook until fragrant, 30 seconds. Stir in stock concentrate, reserved pasta cooking water, and crème fraîche. Season with salt and pepper. Cook until slightly thickened, 2-3 minutes. Remove pan from heat and stir in half the Parmesan. Add zucchini, mushrooms, drained penne, and juice from half the lemon. Stir to combine. Season with salt and pepper. Divide pasta between bowls. Serve with remaining Parmesan and lemon wedges on the side.',
+        user_id: 8,
+        foodType: "dinner"
+    },
+    {
+        title: 'Hoisin Honey Chicken',
+        description: 'Chicken with a hoisin honey sauce topped with sesame seeds, served with green beans and jasmine rice.',
+        instructions: 'Preheat oven to 425 degrees. Wash and dry all produce. Trim green beans if necessary. In a small pot, combine rice, 3/4 cup water (1 1/2 cups for 4 servings), and a pinch of salt. Bring to a boil, then cover and reduce heat to low. Cook until rice is tender, 15 minutes. Keep covered off heat until ready to serve. Toss green beans on a baking sheet with a drizzle of oil, salt, and pepper. Roast on top rack until browned and tender, 12-15 minutes. Meanwhile, thinly slice scallions, separating whites from greens. Peel and mince ginger. In a small bowl, combine hoisin, honey, 2 TBSP water (4 TBSP for 4 servings), and Sriracha to taste. Pat chicken dry with paper towels and season with salt and pepper. Heat a large drizzle of oil in a large pan over medium-high heat. Add chicken in a single layer and cook, stirring occasionally, until browned and almost cooked through, 3-5 minutes. Add scallion whites and ginger. Cook until fragrant, 1 minute. Pour in hoisin sauce and cook, stirring, until chicken is coated and cooked through, 2-3 minutes. Fluff rice with a fork and season with salt and pepper. Divide rice, green beans, and chicken between plates. Garnish with scallion greens and sesame seeds. Serve.',
+        user_id: 9,
+        foodType: "lunch"
+    },
+    {
+        title: 'Pork and Zucchini Bibimbap',
+        description: 'Pork and Zucchini Bibimbap served with carrots and pickled scallions.',
+        instructions: 'Wash and dry produce. Trim and thinly slice scallions, separating whites from greens. Peel and mince ginger. Trim and halve zucchini lengthwise, then cut crosswise into 1/2-inch-thick half-moons. Dice tomato. In a small bowl, combine vinegar, 1 TBSP sugar (2 TBSP for 4 servings), and a pinch of salt. Stir until sugar and salt are mostly dissolved. Add sliced scallion whites and set aside to pickle. In a small pot, combine rice, 3/4 cup water (1 1/2 cups for 4 servings), and a pinch of salt. Bring to a boil, then cover and reduce heat to low. Cook until rice is tender, 15-18 minutes. Keep covered off heat until ready to serve. Heat a drizzle of oil in a large pan over medium-high heat. Add zucchini, season with salt and pepper. Cook, stirring occasionally, until browned and tender, 5-7 minutes. Transfer to a plate. Add another drizzle of oil to the same pan. Add pork, ginger, and garlic. Cook, breaking up meat into pieces, until browned and cooked through, 4-5 minutes. Stir in soy sauce and cook until slightly thickened, 1-2 minutes. Fluff rice with a fork and season with salt and pepper. Divide rice, pork, and veggies between plates. Top with pickled scallion whites and tomato. Sprinkle with scallion greens and serve.',
+        user_id: 10,
+        foodType: "dinner"
+    },
+    {
+        title: 'Moo Shu Pork Bowls',
+        description: 'Moo shu pork bowl served with cabbage, scallions, and buttery rice, topped with sesame seeds.',
+        instructions: 'Wash and dry produce. Trim and thinly slice scallions, separating whites from greens. Quarter lime. In a small pot, combine rice, 3/4 cup water (1 1/2 cups for 4 servings), and a pinch of salt. Bring to a boil, then cover and reduce heat to low. Cook until rice is tender, 15-18 minutes. Keep covered off heat until ready to serve. Heat a drizzle of oil in a large pan over medium-high heat. Add pork and cook, breaking up meat into pieces, until browned and cooked through, 4-5 minutes. Stir in scallion whites and cabbage. Cook until softened, 1-2 minutes. Stir in hoisin, chili sauce, 2 1/2 TBSP sweet soy glaze (5 TBSP for 4 servings), 1/4 cup water (1/2 cup for 4 servings), and 1/2 tsp sugar. Cook until sauce is slightly thickened, 1-2 minutes. Taste and season with juice from half the lime (whole lime for 4 servings), salt, and pepper. Fluff rice with a fork and stir in 1 TBSP butter (2 TBSP for 4 servings) until melted. Season with salt and pepper. Divide rice between bowls and top with moo shu pork. Sprinkle with scallion greens and as many sesame seeds as you like. Serve with any remaining lime wedges on the side.',
+        user_id: 11,
+        foodType: "dinner"
+    },
+    {
+        title: 'Sweet Chili Pork Bowls',
+        description: 'Pork Bowl with sweet cili sauce, bell pepper, candied peanuts, and jasmine rice.',
+        instructions: 'Wash and dry produce. Halve, core, and thinly slice bell pepper into strips. Trim and thinly slice scallions, separating whites from greens. Peel and mince garlic. Quarter lime. Finely chop cilantro. In a small pot, combine rice, 3/4 cup water (1 1/2 cups for 4 servings), and a pinch of salt. Bring to a boil, then cover and reduce heat to low. Cook until rice is tender, 15 minutes. Keep covered off heat until ready to serve. Heat a large, dry pan over medium-high heat. Add peanuts and cook, stirring occasionally, until golden, 2-3 minutes. Add 1 tsp sugar (2 tsp for 4 servings) and cook until peanuts are coated and sugar is melted, 1-2 minutes. Turn off heat and transfer to a small bowl. Wipe out pan. Heat a large drizzle of oil in the same pan over medium-high heat. Add bell pepper and cook, stirring occasionally, until softened, 5-6 minutes. Add scallion whites and garlic. Cook until fragrant, 1 minute. Transfer veggies to a plate. Heat another drizzle of oil in the same pan over medium-high heat. Add pork and cook, breaking up meat into pieces, until browned and cooked through, 4-5 minutes. Stir in soy glaze, chili sauce, and 2 TBSP water (4 TBSP for 4 servings). Cook until sauce is thickened, 1-2 minutes. Return veggies to pan and toss with pork. Fluff rice with a fork and stir in 1 TBSP butter (2 TBSP for 4 servings), lime zest, and half the cilantro. Season with salt and pepper. Divide rice between bowls and top with pork and veggies. Sprinkle with candied peanuts, scallion greens, and remaining cilantro. Serve with lime wedges on the side.',
+        user_id: 12,
+        foodType: "lunch"
+    },
 ];
