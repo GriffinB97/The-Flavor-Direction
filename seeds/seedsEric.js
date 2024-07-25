@@ -1,14 +1,16 @@
 const sequelize = require('../config/connection');
 const { User, Recipe, Ingredient, RecipeIngredient } = require('../models');
 
-const users= [
-    {
-        username: 'Eric',
-        email: 'eric@meMyself.com',
-        password: 'theWord',
-    },
-];
+// const users= [
+//     {
+//         username: 'Eric',
+//         email: 'eric@meMyself.com',
+//         password: 'theWord',
+//     },
+// ];
+//const userData = await User.create(req.body);
 
+const myUser = {username: 'Eric', email: 'eric@meMyself.com', password: 'theWord'}
 
 
 
@@ -127,3 +129,7 @@ const recipes = [
     }
 
 ];
+
+
+User.create(myUser);
+Recipe.bulkCreate(recipes);
