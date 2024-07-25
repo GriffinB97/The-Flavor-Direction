@@ -3,44 +3,12 @@ const { User, Recipe, Ingredient, RecipeIngredient } = require('../models');
 
 const users= [
     {
-        username: '',
-        email: '',
-        password: '',
+        username: 'Eric',
+        email: 'eric@meMyself.com',
+        password: 'theWord',
     },
 ];
 
-const ingredients = [
-    { ingredient_name: "Sugar" },
-    { ingredient_name: "Salt" },
-    { ingredient_name: "Butter" },
-    { ingredient_name: "Egg" },
-    { ingredient_name: "Lemon" },
-    { ingredient_name: "Flour" },
-    { ingredient_name: "Instant Yeast" },
-    { ingredient_name: "Buttermilk" },
-    { ingredient_name: "Cinamon" },
-    { ingredient_name: "Brown Sugar" },
-    { ingredient_name: "Cream Cheese" },
-    { ingredient_name: "Powdered Sugar" },
-    { ingredient_name: "Cocoa Powder" },
-    { ingredient_name: "Espresso Powder" },
-    { ingredient_name: "Unsweetened Chocolate" },
-    { ingredient_name: "Boiling Water" },
-    { ingredient_name: "Vegetable Oil" },
-    { ingredient_name: "Egg Yolks" },
-    { ingredient_name: "Vanilla Extract" },
-    { ingredient_name: "Bittersweet Chocolate" },
-    { ingredient_name: "Baking Soda" },
-    { ingredient_name: "Carrots" },
-    { ingredient_name: "Pecans" },
-    { ingredient_name: "Raisins" },
-    { ingredient_name: "Heavy Whipping Cream" },
-    { ingredient_name: "Whole Milk" },
-    { ingredient_name: "Graham Crackers" },
-    { ingredient_name: "Sour Cream" },
-    { ingredient_name: "Brandy" },
-
-];
 
 
 
@@ -64,8 +32,9 @@ const recipes = [
             "In a mixer combine 2 cups of sifted powdered sugar, 8 ounces of room temperature cream cheese, and 4 ounces of room temperature butter. Mix to combine.",
             "If it’s too thick add some heavy cream or whole milk to the mixture to thin it out."
         ],
-        ingredient: [
-            "Sugar", "Salt" , "Butter", "Lemon", "Flour", "Instant Yeast", "Buttermilk", "Cinamon", "Brown Sugar", "Cream Cheese", "Powdered Sugar"
+        ingredients: [
+            "3 1/4 ounces of Sugar", "1/2 teaspoon of Salt" , "3 ounces of Butter", "Zest of 1 Lemon", "16 oz of Bread Flour", "1 packet of Instant Yeast", "8 ounces of Buttermilk", "1/2 cup of Sugar", 
+            "1 1/2 tabelspoons of Cinamon", "1/4 cup of Brown Sugar", "8 ounces of Cream Cheese", "2 cups of Powdered Sugar", "4 ounces of Butter"
         ],
         user_id : 1,
         foodType : "breakfast"
@@ -80,6 +49,10 @@ const recipes = [
             "Add vanilla extract and whisk, then add granulated sugar and stir to combine.",
             "Next, add flour. Mix it thoroughly and then add the chopped bittersweet chocolate. Stir to combine one last time.",
             "Pour batter into prepared pan. Bake at 350°F for 30-35 minutes, until a tester comes out clean-ish."
+        ],
+        ingredients : [
+            "1/3 cup cocoa powder", "1 1/2 tsp espresso powder", "2 ounces unsweetened chocolate", "1/2 cup plus 2 Tbsp boiling water", "4 Tbsp butter", "1/2 cup plus 2 Tbsp vegetable oil",
+            "2 large eggs plus 2 egg yolks", "1 1/2 tsp vanilla extract", "2 1/2 cups granulated sugar", "1 3/4 cup all purpose flour", "6 ounces bittersweet chocolate"
         ],
         user_id : 1,
         foodType : "dessert"
@@ -101,6 +74,11 @@ const recipes = [
             "Beat in the powdered sugar, a 1/4 cup at a time, until fluffy.",
             "Pour in the whipping cream. Beat on medium speed for 2 to 3 minutes, or until the frosting is whipped and creamy. This frosting resembles the texture of whipped cream. Chill covered until ready to frost the cake.  Frost the cake and add chopped pecans to the top. "
         ],
+        ingredients : [
+            "2 cups (260 grams) all-purpose flour", "2 teaspoons baking soda", "1/2 teaspoon fine sea salt", "1 1/2 teaspoons ground cinnamon", "1 1/4 cups (295 ml) canola or other vegetable oil",
+            "1 cup (200 grams) granulated sugar", "1 cup (190 grams) lightly packed brown sugar", "1 teaspoon vanilla extract", "4 large eggs, at room temperature", "3 cups (300 grams) grated peeled carrots, 5 to 6 medium carrots",
+            "1 cup (100 grams) coarsely chopped pecans", "1/2 cup (65 grams) raisins", "16 ounces cream cheese, at room temperature", "2 1/2  cups (280 grams) powdered sugar", "2/3 cup (160 ml) cold heavy whipping cream", "1 cup coarsely chopped pecans, for topping cake"
+        ],
         user_id : 1,
         foodType : "dessert"
     },
@@ -114,6 +92,10 @@ const recipes = [
             "Once doubled, punch down dough and put out onto a lightly floured surface and separate into 3 or 6 pieces, depending on the size bun you would like. Form dough into balls and place on lined baking sheet, slightly flattening into a cake. Cover and let rise for another 45 - 60 minutes.",
             "Preheat oven to 400°F / 200°C and make an egg wash with either a whole egg or egg white (if you used the saffron for color).",
             "Bake buns for 15 minutes, tenting them if they begin to brown too much. An instant read thermometer should read 190°F-200°F (approx.90°C). Cool on a wire rack and serve warm with butter, jam or clotted cream."
+        ],
+        ingredients: [
+            "1 1/4 cup (280ml) whole milk", "6 tablespoons (85g) of butter at room temperature", "1/4 cup (50g) sugar", "3 3/4 cup (450g) of bread flour (or all purpose)", "7g instant yeast or active dry yeast.",
+            "2 eggs (Plus an extra egg for the egg wash)", "The zest of 1 lemon", "1 1/2 teaspoons of salt", "2-3 saffron threads (optional; for color only)"
         ],
         user_id : 1,
         foodType : "breakfast"
@@ -135,6 +117,10 @@ const recipes = [
             "Crank the oven to 500° and bake for an additional 6-12 minutes.",
             "Run a paring knife around the outside of the cake to help with the cake sticking to the sides and let cool for 3 hours. After it has cooled and you’ve removed the spring form, wrap in plastic wrap and place in the fridge for an additional 4 hours.",
             "Once it’s cooled, remove it from the fridge and remove the plastic wrap. Brush the top with some brandy before adding toasted crushed pecans."
+        ],
+        ingredients: [
+            "6 whole graham crackers", "2 1/3 ounces brown sugar", "2 1/2 ounces all purpose flour", "Salt", "7 Tbsp melted butter", "2 1/2 pounds of full fat cream cheese, cut", "11 ounces of sugar, divided", "1/3 cup sour cream",
+            "Juice of 1/2 a lemon", "1 tsp vanilla extract", "2 egg yolks", "6 whole eggs", "Brandy"
         ],
         user_id : 1,
         foodType : "dessert"
