@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-//api//user
+//api//users
 //needs a post
 //needs a delete
 //needs a get by ID
