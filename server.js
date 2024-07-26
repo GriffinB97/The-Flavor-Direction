@@ -4,13 +4,12 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const routes = require('./controllers');
-
 const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const sess = { //figure out what this does
+const sess = { //figure out what this does    // used for cookies
     secret: 'Super secret secret',
     resave: false,
     saveUninitialized: true,
