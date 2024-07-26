@@ -1,6 +1,23 @@
-<h1>Users!</h1>
-{{#each userTotal as |users|}}
-    <a href="users/{{id}}">{{name}}</a>
-    <br>
-{{/each}}
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="is-size-1 has-text-primary has-text-weight-bold">Users!</h1>
+            <div class="content">
+                {{#each userTotal as |user|}}
+                    <a href="users/{{user.id}}" class="is-size-4 has-text-success">{{user.name}}</a>
+                    <br>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
