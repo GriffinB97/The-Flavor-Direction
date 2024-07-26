@@ -25,6 +25,34 @@ router.get('/', async (req,res) => {
     }
 });
 
+
+//post, so creating a new user
+//works
+router.post('/', async (req,res) => {
+    try {
+        const userData = await User.create(req.body);
+        res.json(userData);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+
+
+//login info
+// {{!-- GET ROUTE --}}
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
+
 //get by id
 //works
 router.get('/:id', async (req,res) => {
@@ -40,18 +68,6 @@ router.get('/:id', async (req,res) => {
     }
 });
 
-//post, so creating a new user
-//works
-router.post('/', async (req,res) => {
-    try {
-        const userData = await User.create(req.body);
-        res.json(userData);
-    }
-    catch (err) {
-        console.log(err);
-        res.status(400).json(err);
-    }
-});
 
 //delete
 //sort of works
@@ -75,8 +91,5 @@ router.delete('/:id', async (req,res) => {
         res.status(500).json(err);
     }
 });
-
-
-
 
 module.exports = router;
