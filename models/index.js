@@ -7,7 +7,7 @@ const RecipeIngredient = require('./recipeIngredient');
 //set up the relationship between user and recipe
 //a user can have many recipes
 User.hasMany(Recipe, {
-    foreignKey: 'poster_id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
