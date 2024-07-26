@@ -16,8 +16,10 @@ router.get('/', async (req,res) => {
             userTotal.push(user.dataValues);
         }
         console.log(userTotal);
-        res.json(userTotal);
+        // res.json(userTotal);
         //handelbars call go here
+        //res.redirect('/');
+        res.render('users', {userTotal});
     }
     catch (err) {
         console.log(err);
@@ -43,6 +45,7 @@ router.post('/', async (req,res) => {
 
 //login info
 // {{!-- GET ROUTE --}}
+//api/users/login
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -55,12 +58,14 @@ router.get('/login', (req, res) => {
 
 //get by id
 //works
+//needs to be low to prevent it from eating the /login route
 router.get('/:id', async (req,res) => {
     try {
-        const userData = (await User.findByPk(req.params.id)).dataValues;
-        console.log(userData);
-        res.json(userData);
+        const userTotal = [(await User.findByPk(req.params.id)).dataValues];
+        console.log(userTotal);
+        // res.json(userData);
         //handelbars call go here
+        res.render('users', {userTotal});
     }
     catch (err) {
         console.log(err);
