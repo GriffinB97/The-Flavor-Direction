@@ -1,5 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
+    const username = document.querySelector('#username-login').value.trim();
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
@@ -7,7 +8,7 @@ const loginFormHandler = async (event) => {
   
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ 'name': username, 'email': email, 'password': password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -27,9 +28,10 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
   
     if (username && email && password) {
-      const response = await fetch('/api/users', {
+      //this currently creates a new user, Eric will fix this
+      const response = await fetch('/api/users/create', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ 'name': username, 'email' : email, 'password': password }),
         headers: { 'Content-Type': 'application/json' },
       });
   

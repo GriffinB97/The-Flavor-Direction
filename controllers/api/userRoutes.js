@@ -34,7 +34,8 @@ router.get('/', async (req,res) => {
 //fetch(/api/users){
 // method: post
 //}
-router.post('/', async (req,res) => {
+//this is making a new user, this is wrong
+router.post('/create', async (req,res) => {
     try {
         const userData = await User.create(req.body);
         res.json(userData);
@@ -45,6 +46,27 @@ router.post('/', async (req,res) => {
     }
 });
 
+
+router.post('/login', async (req, res) => {
+    //this will be fed a name, a password, and an email
+    try{
+        console.log(req.body);
+        res.json('Thanks');
+        //this gives a req.body.name, req.body.email, req.body.password
+        //find the user by email, then do the comparisons
+        const searchUser = await User.findOne({where: {email: req.body.email}});
+        const passCheck = searchUser.checkPassword(req.body.password);
+        if ((searchUser.name === req.body.name)&&passCheck){
+            res.json(true);
+        }
+        else{
+            res.json(false);
+        }
+    }
+    catch (err) {
+        res.status(404).json(err);
+    }
+}); 
 
 
 //login info
