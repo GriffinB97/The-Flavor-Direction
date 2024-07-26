@@ -14,8 +14,10 @@ router.get('/', async (req, res) => {
             recipeTotal.push(recipe.dataValues);
         }
         console.log(recipeTotal);
-        res.json(recipeTotal);
-        //handelbars call goes here
+        // res.json(recipeTotal);
+    //   res.render('login');
+    //handelbars call goes here
+        res.render('recipe', {recipeTotal});
     }
     catch (err) {
         console.log(err);
@@ -25,12 +27,14 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const recipeData = (await Recipe.findByPk(req.params.id, {
+        const recipeTotal = [(await Recipe.findByPk(req.params.id, {
             include: [{ model: User }]
-        })).dataValues;
+        })).dataValues];
         //this should work
-        console.log(recipeData);
-        res.json(recipeData);
+        console.log(recipeTotal);
+        // res.json(recipeData);
+        res.render('recipe', {recipeTotal});
+        
         //handelbars call goes here
     }
     catch (err) {
@@ -48,12 +52,13 @@ router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
             },
             include: [{ model: User }]
         });
-        const allType = [];
+        const recipeTotal = [];
         for (meal of allMeals) {
-            allType.push(meal.dataValues);
+            recipeTotal.push(meal.dataValues);
         }
-        console.log(allType);
-        res.json(allType);
+        // console.log(allType);
+        // res.json(allType);
+        res.render('recipe', {recipeTotal});
         //handelbars call
     }
     catch (err) {
