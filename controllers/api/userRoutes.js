@@ -30,6 +30,10 @@ router.get('/', async (req,res) => {
 
 //post, so creating a new user
 //works
+//make a json object
+//fetch(/api/users){
+// method: post
+//}
 router.post('/', async (req,res) => {
     try {
         const userData = await User.create(req.body);
