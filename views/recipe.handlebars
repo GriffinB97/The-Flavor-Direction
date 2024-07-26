@@ -1,10 +1,13 @@
 <h1>Recipes!</h1>
   {{#each recipeTotal as |recipe|}}
-  <div class="maindisplay" id="recipe">
-    <h5>{{recipe.title}}</h5>
+  <div class="content box maindisplay" id="recipe">
+    <h5 class="has-text-warning">{{recipe.title}}</h5>
     <p>{{recipe.description}}</p>
+    <p class="has-text-warning">Instructions</p>
+    <ol type="I">
     {{#each recipe.instructions as |instructions|}}
-    <p>{{instructions}}</p>
+    <li>{{instructions}}</li>
     {{/each}}
+    </ol>
 </div>
   {{/each}}
