@@ -26,6 +26,7 @@ router.get('/', async (req,res) => {
 });
 
 //get by id
+//works
 router.get('/:id', async (req,res) => {
     try {
         const userData = (await User.findByPk(req.params.id)).dataValues;
@@ -40,6 +41,7 @@ router.get('/:id', async (req,res) => {
 });
 
 //post, so creating a new user
+//works
 router.post('/', async (req,res) => {
     try {
         const userData = await User.create(req.body);
@@ -52,6 +54,8 @@ router.post('/', async (req,res) => {
 });
 
 //delete
+//sort of works
+//the onDelete cascade isn't working, so a user with recipes cannot be deleted
 router.delete('/:id', async (req,res) => {
     try {
         const userData = await User.destroy({
