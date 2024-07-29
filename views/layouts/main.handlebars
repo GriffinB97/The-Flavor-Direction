@@ -12,15 +12,16 @@
         <h1 class="is-size-1 has-text-warning has-text-weight-bold	">Flavor Direction</h1>
         <h2 class="is-size-2 has-text-warning is-italic"> One Stop Shop for Everything Delicious!</h2>
     </header>
-    {{#if logged_in}} 
+    
     <nav class="tabs is-size-4">   
-        <a href="/" class="box">Home</a>      
+        <a href="/" class="box">Home</a>  
+        {{#if logged_in}}     
         <a href="/api/recipes" class="box">Recipes</a>      
         <a href="/api/users" class="box">Users</a>
         <a href="/api/recipes/createrecipe" class="box">Create Recipe </a>
         <button class="btn" id="logout">Logout</button>
+         {{/if}}
         </nav>
-    {{!-- {{else}} --}}
  
     {{/if}}
     
