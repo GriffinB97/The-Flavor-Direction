@@ -30,9 +30,13 @@ router.post('/createrecipe', async (req, res) => {
     try {
         //sequelize function create
         //req.body has the variables
-    
+        console.log(JSON.stringify(req.body) + " this is where I am");
+        console.log(req.body);
+        console.log(typeof(req.body));
         req.body.foodType = (req.body.foodType).toLowerCase(); //this turns the foodType into a lower case string to prevent Dessert AND dessert
         const newRecipe = await Recipe.create(req.body);
+        // const newRecipe = await Recipe.create({ "title" : req.body.title,  "description" : req.body.description, 
+        //      "instructions" : req.body.instructions,  "foodType" : req.body.foodType,  "user_id" : req.session.user_id});
         //this should create the new recipe
         res.json(newRecipe);
         //if there is a page for post successful, put the handelbars here
@@ -104,6 +108,8 @@ router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
 });
 
 // //it requires a user id, a title, a description, and a food type
+// {user_id : req.session.user_id, }
+// {title : req.body.title, }
 // router.post('/', async (req, res) => {
 //     try {
 //         //sequelize function create

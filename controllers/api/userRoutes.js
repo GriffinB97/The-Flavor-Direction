@@ -53,10 +53,12 @@ router.post('/login', async (req, res) => {
         const searchUser = await User.findOne({where: {email: req.body.email}});
         const passCheck = searchUser.checkPassword(req.body.password);
         if ((searchUser.name === req.body.name)&&passCheck){
-            res.json({answer : 'pass'});
             //put the loginedIn = true here
+            console.log('here');
             req.session.logged_in = true;
+            req.session.user_id = searchUser.id;
             req.session.save(() => {});
+            res.json({answer : 'pass'});
         }
         else{
             res('false');
@@ -81,15 +83,16 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/logout', async (req, res) => {
+router.post('/logout', async (req, res) => {
     //if logged in
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => { //destroy the log in
           res.status(204).end();
         });
-      } else { //otherwise, how are you here?
+    } 
+    else { //otherwise, how are you here?
         res.status(404).end();
-      }
+    }
 });
 
 
