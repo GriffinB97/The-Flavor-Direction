@@ -15,7 +15,6 @@ router.get('/', async (req,res) => {
         for(user of userData){
             userTotal.push(user.dataValues);
         }
-        console.log(userTotal);
         // res.json(userTotal);
         //handelbars call go here
         //res.redirect('/');
@@ -53,14 +52,13 @@ router.post('/login', async (req, res) => {
         //find the user by email, then do the comparisons
         const searchUser = await User.findOne({where: {email: req.body.email}});
         const passCheck = searchUser.checkPassword(req.body.password);
-        console.log(req.body);
         if ((searchUser.name === req.body.name)&&passCheck){
             res.json({answer : 'pass'});
-            // res('true');
+            //put the loginedIn = true here
+            req.session.logged_in = true;
+            req.session.save(() => {});
         }
         else{
-            // res.json({answer : 'fail'});
-            // console.log('login failed');
             res('false');
         }
     }
@@ -89,13 +87,10 @@ router.get('/login', (req, res) => {
 router.get('/:id', async (req,res) => {
     try {
         const userTotal = [(await User.findByPk(req.params.id)).dataValues];
-        console.log(userTotal);
-        // res.json(userData);
         //handelbars call go here
         res.render('users', {userTotal});
     }
     catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
