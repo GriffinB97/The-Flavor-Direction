@@ -81,15 +81,16 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/logout', async (req, res) => {
+router.post('/logout', async (req, res) => {
     //if logged in
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => { //destroy the log in
           res.status(204).end();
         });
-      } else { //otherwise, how are you here?
+    } 
+    else { //otherwise, how are you here?
         res.status(404).end();
-      }
+    }
 });
 
 
