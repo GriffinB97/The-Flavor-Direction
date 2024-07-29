@@ -4,6 +4,10 @@ const { Recipe, User } = require('../../models');
 
 //needs a get , get by id , a post recipe that requires a user
 router.get('/', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/api/users/login');
+        return;
+      }
     //goes through the recipe database and feeds the entries into a handelbars template
     try {
         const recipeData = await Recipe.findAll({
@@ -51,8 +55,8 @@ router.post('/createrecipe', async (req, res) => {
 // {{!-- GET ROUTE --}}
 //api/users/login
 router.get('/createrecipe', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.logged_in) {
+    res.redirect('/api/users/login');
     return;
   }
 
@@ -67,6 +71,10 @@ router.get('/createrecipe', (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/api/users/login');
+        return;
+      }
     try {
         const recipeTotal = [(await Recipe.findByPk(req.params.id, {
             include: [{ model: User }]
@@ -86,6 +94,10 @@ router.get('/:id', async (req, res) => {
 
 //get by food type
 router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
+    if (!req.session.logged_in) {
+        res.redirect('/api/users/login');
+        return;
+      }
     try {
         const allMeals = await Recipe.findAll({ //this should be how searching for a specific thing works
             where: {

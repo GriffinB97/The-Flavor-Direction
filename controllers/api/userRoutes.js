@@ -9,6 +9,10 @@ const { User } = require('../../models');
 
 //get all
 router.get('/', async (req,res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/api/users/login');
+        return;
+      }
     try {
         const userData = await User.findAll();
         const userTotal = [];

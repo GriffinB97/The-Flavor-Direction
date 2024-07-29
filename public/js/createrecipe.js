@@ -3,10 +3,16 @@ const createrecipeFormHandler = async (event) => {
     const title = document.querySelector('#title-recipe').value.trim();
     const description = document.querySelector('#description-recipe').value.trim();
     const instructions = document.querySelector('#instructions-recipe').value.trim();
-  
+    const ingredients = document.querySelector('#ingredients-recipe').value.trim();
+    const foodType = document.querySelector('#foodType-recipe').value.trim();
+    // const hasNuts = document.querySelector('#hasnuts-recipe').value.trim();
+    // const glutenFree = document.querySelector('#gluten-recipe').value.trim();
+    // const vegan = document.querySelector('#vegan-recipe').value.trim();
+
     if (title && description && instructions) {
       const instArray = instructions.split('.');
-      const recipeJSON = JSON.stringify({title, description, instructions : instArray, foodType});
+      const ingArray = ingredients.split('.');
+      const recipeJSON = JSON.stringify({title, description, instructions : instArray, ingredients : ingArray, foodType});
       console.log(recipeJSON);
       const response = await fetch('/api/recipes/createrecipe', {
         method: 'POST',
