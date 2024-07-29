@@ -49,16 +49,19 @@ router.post('/create', async (req,res) => {
 router.post('/login', async (req, res) => {
     //this will be fed a name, a password, and an email
     try{
-        console.log(req.body);
         //this gives a req.body.name, req.body.email, req.body.password
         //find the user by email, then do the comparisons
         const searchUser = await User.findOne({where: {email: req.body.email}});
         const passCheck = searchUser.checkPassword(req.body.password);
+        console.log(req.body);
         if ((searchUser.name === req.body.name)&&passCheck){
-            res.json(true);
+            res.json({answer : 'pass'});
+            // res('true');
         }
         else{
-            res.json(false);
+            // res.json({answer : 'fail'});
+            // console.log('login failed');
+            res('false');
         }
     }
     catch (err) {
