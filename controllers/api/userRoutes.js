@@ -53,10 +53,12 @@ router.post('/login', async (req, res) => {
         const searchUser = await User.findOne({where: {email: req.body.email}});
         const passCheck = searchUser.checkPassword(req.body.password);
         if ((searchUser.name === req.body.name)&&passCheck){
-            res.json({answer : 'pass'});
             //put the loginedIn = true here
+            console.log('here');
             req.session.logged_in = true;
+            req.session.user_id = searchUser.id;
             req.session.save(() => {});
+            res.json({answer : 'pass'});
         }
         else{
             res('false');
