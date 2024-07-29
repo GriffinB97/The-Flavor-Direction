@@ -9,11 +9,15 @@ const createrecipeFormHandler = async (event) => {
     // const vegan = document.querySelector('#vegan-recipe').value.trim();
 
     if (title && description && instructions) {
-  
-      const response = await fetch('/api/users/createrecipe', {
+      const instArray = instructions.split('.');
+      const recipeJSON = JSON.stringify({title, description, instructions : instArray, foodType});
+      console.log(recipeJSON);
+      const response = await fetch('/api/recipes/createrecipe', {
         method: 'POST',
-        body: JSON.stringify({ title, description, instructions, foodType, }),
-        headers: { 'Content-Type': 'application/json' },
+        body: recipeJSON,
+        // body : "{'user_id':2,'title':'Cake','description':'It is a normal cake','foodType':'dessert','instructions':'make a cake'}",
+        // headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type' : 'application/json'},
       });
   
       if (response.ok) {
