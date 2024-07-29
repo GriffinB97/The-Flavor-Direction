@@ -46,12 +46,10 @@ router.post('/create', async (req,res) => {
     }
 });
 
-
 router.post('/login', async (req, res) => {
     //this will be fed a name, a password, and an email
     try{
         console.log(req.body);
-        res.json('Thanks');
         //this gives a req.body.name, req.body.email, req.body.password
         //find the user by email, then do the comparisons
         const searchUser = await User.findOne({where: {email: req.body.email}});

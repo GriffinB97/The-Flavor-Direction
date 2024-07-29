@@ -66,22 +66,7 @@ router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
     }
 });
 
-//get ingredient list
-// router.get('/:id/ingredient', async (req, res) => {
-//     try {
-//         //this needs to check the recipe for ingridients and store them in a list
-//         //ingredients is a catagory under recipe
-//         //go through the ingredients and put it into a list for handle vars
-//         const meal = await Recipe.findByPk(req.params.id);
-//         const ingredientList = meal.ingredients;
-//         console.log(ingredientList);
-//         res.json(ingredientList);
-//     }
-//     catch (err) {
-//         res.status(404).json("No recipe was found.");
-//     };
-// });
-
+//it requires a user id, a title, a description, and a food type
 router.post('/', async (req, res) => {
     try {
         //sequelize function create
@@ -90,6 +75,7 @@ router.post('/', async (req, res) => {
             res.status(400).json({ message: 'User ID is required to create a recipe' });
             return;
         }
+        req.body.foodType = (req.body.foodType).toLowerCase(); //this turns the foodType into a lower case string to prevent Dessert AND dessert
         const newRecipe = await Recipe.create(req.body);
         //this should create the new recipe
         res.json(newRecipe);
