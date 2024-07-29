@@ -81,6 +81,18 @@ router.get('/login', (req, res) => {
 });
 
 
+router.get('/logout', async (req, res) => {
+    //if logged in
+    if (req.session.loggedIn) {
+        req.session.destroy(() => { //destroy the log in
+          res.status(204).end();
+        });
+      } else { //otherwise, how are you here?
+        res.status(404).end();
+      }
+});
+
+
 //get by id
 //works
 //needs to be low to prevent it from eating the /login route
@@ -118,5 +130,6 @@ router.delete('/:id', async (req,res) => {
         res.status(500).json(err);
     }
 });
+
 
 module.exports = router;
