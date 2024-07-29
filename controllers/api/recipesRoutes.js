@@ -25,6 +25,43 @@ router.get('/', async (req, res) => {
     }
 });
 
+//it requires a user id, a title, a description, and a food type
+router.post('/createrecipe', async (req, res) => {
+    try {
+        //sequelize function create
+        //req.body has the variables
+    
+        req.body.foodType = (req.body.foodType).toLowerCase(); //this turns the foodType into a lower case string to prevent Dessert AND dessert
+        const newRecipe = await Recipe.create(req.body);
+        //this should create the new recipe
+        res.json(newRecipe);
+        //if there is a page for post successful, put the handelbars here
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+});
+
+//login info
+// {{!-- GET ROUTE --}}
+//api/users/login
+router.get('/createrecipe', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('createrecipe');
+});
+
+
+
+
+
+
+
+
 router.get('/:id', async (req, res) => {
     try {
         const recipeTotal = [(await Recipe.findByPk(req.params.id, {
@@ -66,26 +103,26 @@ router.get('/meal/:foodType', async (req, res) => { // /api/recipe/meal/dinner
     }
 });
 
-//it requires a user id, a title, a description, and a food type
-router.post('/', async (req, res) => {
-    try {
-        //sequelize function create
-        //req.body has the variables
-        if (!req.body.user_id) {
-            res.status(400).json({ message: 'User ID is required to create a recipe' });
-            return;
-        }
-        req.body.foodType = (req.body.foodType).toLowerCase(); //this turns the foodType into a lower case string to prevent Dessert AND dessert
-        const newRecipe = await Recipe.create(req.body);
-        //this should create the new recipe
-        res.json(newRecipe);
-        //if there is a page for post successful, put the handelbars here
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).json(err)
-    }
-});
+// //it requires a user id, a title, a description, and a food type
+// router.post('/', async (req, res) => {
+//     try {
+//         //sequelize function create
+//         //req.body has the variables
+//         if (!req.body.user_id) {
+//             res.status(400).json({ message: 'User ID is required to create a recipe' });
+//             return;
+//         }
+//         req.body.foodType = (req.body.foodType).toLowerCase(); //this turns the foodType into a lower case string to prevent Dessert AND dessert
+//         const newRecipe = await Recipe.create(req.body);
+//         //this should create the new recipe
+//         res.json(newRecipe);
+//         //if there is a page for post successful, put the handelbars here
+//     }
+//     catch (err) {
+//         console.log(err);
+//         res.status(500).json(err)
+//     }
+// });
 
 
 //delete recipe
