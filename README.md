@@ -29,3 +29,6 @@ When you open up the app you will be routed towards our homescreen! You will nee
 ### https://the-flavor-direction.onrender.com
 
 ## Screenshots
+![alt text](./public/images/Screenshot%20(13).png)
+![alt text](./public/images/Screenshot%20(14).png)
+![alt text](./public/images/Screenshot%20(12).png)
