@@ -20,6 +20,7 @@ const createrecipeFormHandler = async (event) => {
         // body : "{'user_id':2,'title':'Cake','description':'It is a normal cake','foodType':'dessert','instructions':'make a cake'}",
         // headers: { 'Content-Type': 'application/json' },
         headers: {'Content-Type' : 'application/json'},
+
       });
   
       if (response.ok) {
